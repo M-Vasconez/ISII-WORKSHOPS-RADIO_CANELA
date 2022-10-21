@@ -2,12 +2,17 @@ package ec.edu.espol.workshops;
 
 import java.util.GregorianCalendar;
 
+//The purpose of the class is to calculate the final amount of car insure from the data given by the user
 public class CarInsurance {
-
-	private final Integer base = 500;
-	private final Integer maleNotMarried25 = 1500;
-	private final Integer femMarried = 200;
-	private final Integer between45and65 = 100;
+	
+	//The base premium is $500, it must be applied to every insurance
+	private static final Integer base = 500;
+	//If the customer is male, not married, and younger than 25, then it is needed to add $1500 to the base premium
+	private static final Integer maleNotMarried25 = 1500;
+	//If the customer is female, or if the customer is married, then it is needed to subtract $200 from the base premium 
+	private static final Integer femMarried = 200;
+	//If the customer is 45 or older, but younger than 65, then it is needed to subtract $100 from the base premium
+	private static final Integer between45and65 = 100;
 	
 	private Integer age;
 	private String sex;
@@ -54,7 +59,7 @@ public class CarInsurance {
 		this.maritalStatus = maritalStatus;
 	}
 	
-	
+	//This method is used to calculate the car insurance with the previous policies checked
 	public Integer calculateInsurance() {
 		if (sex.equalsIgnoreCase("m") && maritalStatus.equalsIgnoreCase("notmarried") && age < 25)
 			return base + maleNotMarried25;
