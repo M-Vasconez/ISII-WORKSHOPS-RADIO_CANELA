@@ -71,7 +71,10 @@ public class CarInsurance {
 	private boolean checkPolicies() {
 		String[] fecha = drivingLicense.split("/");
 		GregorianCalendar currentDate = new GregorianCalendar();
-		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2]) );
+		int dia=Integer.parseInt(fecha[0]);
+		int mes=Integer.parseInt(fecha[1]);
+		int anio=Integer.parseInt(fecha[2]);
+		GregorianCalendar date = new GregorianCalendar(dia, mes, anio );
 		if(age > 80 )
 			return false;
 		else if (currentDate.after(date))
