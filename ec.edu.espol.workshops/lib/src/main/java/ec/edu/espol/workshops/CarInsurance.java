@@ -7,18 +7,22 @@ public class CarInsurance {
 	
 	//The base premium is $500, it must be applied to every insurance
 	private static final Integer base = 500;
-	//If the customer is male, not married, and younger than 25, then it is needed to add $1500 to the base premium
+	//If the customer is male, not married, and younger than 25,then it is needed to add $1500 to the base premium
 	private static final Integer maleNotMarried25 = 1500;
-	//If the customer is female, or if the customer is married, then it is needed to subtract $200 from the base premium 
+	//If the customer is female, or if the customer is married,then it is needed to subtract $200 from the base premium 
 	private static final Integer femMarried = 200;
 	//If the customer is 45 or older, but younger than 65, then it is needed to subtract $100 from the base premium
 	private static final Integer between45and65 = 100;
 	
+	//consumer age
 	private Integer age;
+	//consumer sex can be "M" Male or "F" Female
 	private String sex;
+	//consumer can be Married or single
 	private String maritalStatus;
 	private String drivingLicense;
 	
+	//Constructor for the class
 	public CarInsurance(Integer age, String sex, String maritalStatus, String drivingLicense) {
 		super();
 		this.age = age;
@@ -59,7 +63,8 @@ public class CarInsurance {
 		this.maritalStatus = maritalStatus;
 	}
 	
-	//This method is used to calculate the car insurance with the previous policies checked
+	//This method is used to calculate the 
+	//car insurance with the previous policies checked
 	public Integer calculateInsurance() {
 		if (sex.equalsIgnoreCase("m") && maritalStatus.equalsIgnoreCase("notmarried") && age < 25)
 			return base + maleNotMarried25;
@@ -77,7 +82,7 @@ public class CarInsurance {
 		String[] fecha = drivingLicense.split("/");
 		GregorianCalendar currentDate = new GregorianCalendar();
 		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2]) );
-		if(age > 80 )
+		if( age > 80 )
 			return false;
 		else if (currentDate.after(date))
 			return false;
