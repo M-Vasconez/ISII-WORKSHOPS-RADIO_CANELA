@@ -56,19 +56,18 @@ public class CarInsurance {
 	
 	
 	public Integer calculateInsurance() {
-		if (sex.equalsIgnoreCase("m") && maritalStatus.equalsIgnoreCase("notmarried") && age < 25)
+		if (checkPolicies()) {
+			if (sex.equalsIgnoreCase("m") && maritalStatus.equalsIgnoreCase("notmarried") && age < 25)
 			return base + maleNotMarried25;
-		else if (sex.equalsIgnoreCase("f") || maritalStatus.equalsIgnoreCase("married")) 
-			return base - femMarried;
-		else if (age > 45 && age < 65) 
-			return base - between45and65;
-		else if (checkPolicies())
-			return base;
-		else
-			return -1;	
+			if (sex.equalsIgnoreCase("f") || maritalStatus.equalsIgnoreCase("married")) 
+				return base - femMarried;
+			if (age > 45 && age < 65) 
+				return base - between45and65;
+		}
+		return -1;
 	}
 	
-	private boolean checkPolicies() {
+	public boolean checkPolicies() {
 		String[] fecha = drivingLicense.split("/");
 		GregorianCalendar currentDate = new GregorianCalendar();
 		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2]) );
