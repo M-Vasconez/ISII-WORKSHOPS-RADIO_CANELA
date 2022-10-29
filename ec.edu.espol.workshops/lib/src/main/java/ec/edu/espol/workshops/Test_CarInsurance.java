@@ -24,14 +24,14 @@ class Test_CarInsurance {
 	
 	@Test
 	void test3CalculateInsurance() {
-		boolean expectedPremium = false;
+		int expectedPremium = -1;
 		CarInsurance carins3 = new CarInsurance(88, "m", "married", "2025/10/04");
 		assertEquals(expectedPremium,carins3.calculateInsurance());
 	}
 	
 	@Test
 	void test4CalculateInsurance() {
-		boolean expectedPremium = false;
+		int expectedPremium = -1;
 		CarInsurance carins4 = new CarInsurance(25, "f", "notmarried", "2017/01/04");
 		assertEquals(expectedPremium,carins4.calculateInsurance());
 	}
