@@ -1,7 +1,8 @@
 package ec.edu.espol.workshops;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import io.cucumber.javajava.en.Given;
+import io.cucumber.javajava.en.Then;
+import static org.junit.Assert.*;
 public class StepsDefs {
 	
 	@then("we should receive =1")
