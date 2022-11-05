@@ -1,16 +1,18 @@
-package ec.edu.espol.workshops;
+package java;
 
 import static org.junit.jupiter.api.Assertions.*;
 //import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import ec.edu.espol.workshops.CarInsurance;
+
 
 class Test_CarInsurance {
 
 	@Test
 	void test1CalculateInsurance() {
-		int expectedPremium = 200;
+		int expectedPremium = 300;
 		CarInsurance carins1 = new CarInsurance(50, "f", "married", "2026/10/19");
 		assertEquals(expectedPremium,carins1.calculateInsurance());
 	}

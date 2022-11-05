@@ -63,6 +63,8 @@ public class CarInsurance {
 				return base - femMarried;
 			if (age > 45 && age < 65) 
 				return base - between45and65;
+			else 
+				return base;
 		}
 		return -1;
 	}
