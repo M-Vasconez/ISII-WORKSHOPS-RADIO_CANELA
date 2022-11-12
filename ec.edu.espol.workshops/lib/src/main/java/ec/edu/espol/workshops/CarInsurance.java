@@ -1,6 +1,7 @@
 package ec.edu.espol.workshops;
 
 import java.util.GregorianCalendar;
+import java.util.regex.Pattern;
 
 public class CarInsurance {
 
@@ -79,6 +80,32 @@ public class CarInsurance {
 		else
 			return true;
 		
+	}
+	
+	public static int validateInputs(Object age, Object sex, Object maritalStatus, Object drivingLicense) {
+		Pattern numericValue = Pattern.compile("\\d+");
+		String edad=(String) age;
+		if(!numericValue.matcher(edad).matches())
+			return -1;
+	
+		Pattern sexValue = Pattern.compile("[mf]?");
+		String sexo=(String) sex;
+		if (!sexValue.matcher(sexo).matches())
+			return -1;
+		
+		Pattern marriedValue = Pattern.compile("\\bmarried\\b",Pattern.CASE_INSENSITIVE);
+		Pattern notMarriedValue = Pattern.compile("\\bnotmarried\\b",Pattern.CASE_INSENSITIVE);
+		String married=(String) maritalStatus;
+		if (!marriedValue.matcher(married).matches() && !notMarriedValue.matcher(married).matches())
+			return -1;
+		
+		//FECHA FORMATO AAAA/MM/DD
+		Pattern dateValue = Pattern.compile("^[0-9]{4}/(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])$");
+		String fecha=(String) drivingLicense;
+		if (!dateValue.matcher(fecha).matches())
+			return -1;
+		
+		return 0;
 	}
 	
 	
