@@ -107,7 +107,7 @@ public class CarInsurance {
 		
 		return 0;
 	}
-	public static int validateBounary(Integer age, String sex, String drivingLicense) {
+	public static int validateBoundary(Integer age, String sex, String drivingLicense) {
 		if(age < 18 || age > 80)
 			return -1;
 	
