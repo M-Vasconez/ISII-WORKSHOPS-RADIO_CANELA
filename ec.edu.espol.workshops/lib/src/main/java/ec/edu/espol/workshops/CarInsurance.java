@@ -107,6 +107,21 @@ public class CarInsurance {
 		
 		return 0;
 	}
+	public static int validateBounary(Integer age, String sex, String drivingLicense) {
+		if(age < 18 || age > 80)
+			return -1;
+	
+		if (sex.length() != 1)
+			return -1;
+		
+		String[] fecha = drivingLicense.split("/");
+		GregorianCalendar beforeDate = new GregorianCalendar(2012, 11, 18);
+		GregorianCalendar aftereDate = new GregorianCalendar(2032, 11, 18);
+		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2]) );
+		if (date.after(aftereDate) || date.before(beforeDate))
+			return -1;
+		return 0;
+	}
 	
 	
 }
