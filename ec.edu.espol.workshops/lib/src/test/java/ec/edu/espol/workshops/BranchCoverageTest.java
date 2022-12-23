@@ -1,12 +1,10 @@
 package ec.edu.espol.workshops;
 
 import static org.junit.jupiter.api.Assertions.*;
-//import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-
-class Test_CarInsurance {
+class BranchCoverageTest {
 
 	@Test
 	void test1CalculateInsurance() {
